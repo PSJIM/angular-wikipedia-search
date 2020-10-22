@@ -1,0 +1,19 @@
+<div class="ui form">
+  <div class="field">
+    <label>Enter Search Term</label>
+    <input class="input" [value]="" (change)="handleSearch($event)" />
+  </div>
+</div>
+<div class="ui celled list" *ngIf="this.results.length > 0">
+  <div class="item" *ngFor="let item of results">
+    <div class="right floated content">
+      <a class="ui button" href="https://en.wikipedia.org?curid={{item.pageid}}">Go!</a>
+    </div>
+    <div class="content">
+      <div class="header">
+        {{item.title}}
+      </div>
+      <span [innerHtml]="item.snippet | safeHtml"></span>
+    </div>
+  </div>
+</div>
