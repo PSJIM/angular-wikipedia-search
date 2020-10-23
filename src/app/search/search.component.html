@@ -1,7 +1,7 @@
 <div class="ui form">
   <div class="field">
     <label>Enter Search Term</label>
-    <input class="input" [value]="" (change)="handleSearch($event)" />
+    <input class="input" [value]="" (input)="handleSearch($event)" />
   </div>
 </div>
 <div class="ui celled list" *ngIf="this.results.length > 0">
